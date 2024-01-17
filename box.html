@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box picking</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            max-width: 100%;
+            max-height: 100vh;
+            background-color: aliceblue;
+            transition: all ease-in-out .4s;
+        }
+        .main{
+            max-width: 1200px;
+            height: 80vh;
+            box-shadow: 4px 4px 30px 0px grey;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 30px;
+            gap: 30px;
+            background-color: palegoldenrod;
+            transition: all ease-in-out .4s;
+        }
+        h1{
+            font-size: 2rem;
+            color: darkcyan;
+            font-style: normal;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-block: 15px;
+        }
+        h4{
+            font-size: 1rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: normal;
+            color: rgb(41, 41, 41);
+            margin-block: 0px 20px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            box-shadow: 4px 4px 20px 0px inset gray;
+            display: grid;
+            place-content: center;
+            background-color: aliceblue;
+            transition: all ease-in-out .4s;
+        }
+        .box p{
+            font-size: 3rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: darkcyan;
+            transition: all ease-in-out .4s;
+            text-align: center;
+        }
+        .box h5{
+            font-size: 1rem;
+            color: red;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        @media screen and (max-width: 1134px){
+            body{
+                background-color: palegoldenrod;
+                max-height: fit-content;
+            }
+            .main{
+                box-shadow: none;
+                height: auto;
+                /* background-color: transparent; */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>A Game for Dayo</h1>
+    <h4>Pick any number to see result...</h4>
+    <div class="main" id="main" onclick="main()">
+        <div class="box" onclick="one()"><p id="one">1</p> <h5 id="oneh5"></h5></div>
+        <div class="box" onclick="two()"><p id="two">2</p> <h5 id="twoh5"></h5></div>
+        <div class="box" onclick="three()"><p id="three">3</p> <h5 id="threeh5"></h5></div>
+        <div class="box" onclick="four()"><p id="four">4</p> <h5 id="fourh5"></h5></div>
+        <div class="box" onclick="five()"><p id="five">5</p> <h5 id="fiveh5"></h5></div>
+        <div class="box" onclick="six()"><p id="six">6</p> <h5 id="sixh5"></h5></div>
+        <div class="box" onclick="seven()"><p id="seven">7</p> <h5 id="sevenh5"></h5></div>
+        <div class="box" onclick="eight()"><p id="eight">8</p> <h5 id="eighth5"></h5></div>
+        <div class="box" onclick="nine()"><p id="nine">9</p> <h5 id="nineh5"></h5></div>
+        <div class="box" onclick="ten()"><p id="ten">10</p> <h5 id="tenh5"></h5></div>
+    </div>
+
+    <script>
+        var click = 0;
+        const one1 = document.getElementById('one');
+        const two2 = document.getElementById('two');
+        const three3 = document.getElementById('three');
+        const four4 = document.getElementById('four');
+        const five5 = document.getElementById('five');
+        const six6 = document.getElementById('six');
+        const seven7 = document.getElementById('seven');
+        const eight8 = document.getElementById('eight');
+        const nine9 = document.getElementById('nine');
+        const ten10 = document.getElementById('ten');
+        const oneh5 = document.getElementById("oneh5");
+        const twoh5 = document.getElementById("twoh5");
+        const threeh5 = document.getElementById("threeh5");
+        const fourh5 = document.getElementById("fourh5");
+        const fiveh5 = document.getElementById("fiveh5");
+        const sixh5 = document.getElementById("sixh5");
+        const sevenh5 = document.getElementById("sevenh5");
+        const eighth5 = document.getElementById("eighth5");
+        const nineh5 = document.getElementById("nineh5");
+        const tenh5 = document.getElementById("tenh5");
+
+        const main2 = document.getElementById('main');
+
+        function main(){
+            click++;
+            if(click > 10){
+                alert("you've gotten enough insult for the day")
+                location.reload()
+            }
+        }
+
+        function one(){
+            one1.innerHTML = "You're a fool";
+            one1.style.fontSize = "2rem"
+            click++;
+            if(click > 0){
+                oneh5.innerHTML = "clicked already";
+            }
+        }
+        function two(){
+            two2.innerHTML = "You're an idiot";
+            two2.style.fontSize = "2rem"
+            click++;
+            if(click > 1){
+                twoh5.innerHTML = "clicked already";
+            }
+        }
+        function three(){
+            three3.innerHTML = "You're a big cow";
+            three3.style.fontSize = "2rem"
+            click++;
+            if(click > 1){
+                threeh5.innerHTML = "clicked already";
+            }
+        }
+        function four(){
+            four4.innerHTML = "Chimpanzee";
+            four4.style.fontSize = "2rem"
+            click++;
+            if(click > 1){
+                fourh5.innerHTML = "clicked already";
+            }
+        }
+        function five(){
+            five5.innerHTML = "You resemble dracula";
+            five5.style.fontSize = "2rem"
+            click++;
+            if(click > 1){
+                fiveh5.innerHTML = "clicked already";
+            }
+        }
+        function six(){
+            six6.innerHTML = "Mad man";
+            six6.style.fontSize = "2rem"
+            click++;
+            if(click > 1){
+                sixh5.innerHTML = "clicked already";
+            }
+        }
+        function seven(){
+            seven7.innerHTML = "Ugly mucheche";
+            seven7.style.fontSize = "2rem"
+            click++;
+            if(click > 1){
+                sevenh5.innerHTML = "clicked already";
+            }
+        }
+        function eight(){
+            eight8.innerHTML = "Brain you no get";
+            eight8.style.fontSize = "2rem"
+            click++;
+            if(click > 1){
+                eighth5.innerHTML = "clicked already";
+            }
+        }
+        function nine(){
+            nine9.innerHTML = "Stupid Boy";
+            nine9.style.fontSize = "2rem"
+            click++;
+            if(click > 1){
+                nineh5.innerHTML = "clicked already";
+            }
+        }
+        function ten(){
+            ten10.innerHTML = "My babe fine pass your babe";
+            ten10.style.fontSize = "2rem"
+            click++;
+            if(click > 1){
+                tenh5.innerHTML = "clicked already";
+            }
+        }
+    </script>
+</body>
+</html>

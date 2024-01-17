@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown practice</title>
+    <!-- link boxicon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100px;
+        background-color: black;
+        margin-inline: 10px;
+        margin-top: 5px;
+        z-index: 500;
+
+    }
+    .logo {
+        border: 1px solid goldenrod;
+        font-size: 1.3rem;
+        color: white;
+    }
+    .nav-link ul li {
+        display: inline-block;
+        margin-left: 20px;
+    }
+    .nav-link ul li a {
+        color: white;
+        font-size: 0.9rem;
+        font-weight: bold;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        text-decoration: none;
+        display: block;
+    }
+    .nav-link ul li a:hover {
+        color: gray;
+    }
+    .dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+    .content {
+        background-color: black;
+        border: 1px solid black;
+        padding-block: 2rem;
+        padding-inline: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        margin-left: -3%;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        display: none;
+        z-index: -1;
+    }
+    .content ul {
+        display: flex;
+        flex-direction: column;
+        margin-right: 5px;
+        margin-top: 3%;
+    }
+    .content ul li {
+        margin-block: 6px;
+    }
+    .content ul li a {
+        color: white;
+    }
+    #pages:hover .content {
+        display: block;
+    }
+</style>
+<body>
+    <nav>
+        <div class="logo">
+            LOGO
+        </div>
+        <div class="nav-link">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li>
+                    <div class="dropdown" id="pages">
+                        <div>
+                            <a href="#">Pages <span><i class='bx bx-chevron-down'></i></span></a>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>
